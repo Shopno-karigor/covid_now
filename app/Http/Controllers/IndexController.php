@@ -63,7 +63,6 @@ class IndexController extends Controller
         $err = curl_error($curl);
         curl_close($curl);
         array_push($stats,$country);
-        // dd($stats['stats']['history']);
         return view('country-page',compact('stats'));
     }
     public function saved_page_index(){
@@ -86,7 +85,6 @@ class IndexController extends Controller
                 "X-RapidAPI-Key: 55dea38588msh3dfc3c0933cf70bp1c6d47jsn5c42aa4709a4"
             ],
         ]);
-
         $response = curl_exec($curl);
         $news =json_decode($response,true);
         $err = curl_error($curl);
