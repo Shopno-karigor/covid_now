@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[IndexController::class, 'index'])->name('/');
+Route::get('Country_Page',[IndexController::class, 'country_index'])->name('country.page');
+Route::get('Saved_Page',[IndexController::class, 'saved_page_index'])->name('saved.page');
+Route::get('Other_Features',[IndexController::class, 'other_page_index'])->name('other.feature');
