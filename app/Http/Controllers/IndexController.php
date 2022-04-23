@@ -22,10 +22,9 @@ class IndexController extends Controller
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => [
                 "X-RapidAPI-Host: coronavirus-smartable.p.rapidapi.com",
-                "X-RapidAPI-Key: be7452c0a9msh8c4471d25fe51f0p1ff39djsnc154408a5580"
+                "X-RapidAPI-Key: 55dea38588msh3dfc3c0933cf70bp1c6d47jsn5c42aa4709a4"
             ],
         ]);
-
         $response = curl_exec($curl);
         $stats =json_decode($response,true);
         $err = curl_error($curl);
@@ -56,16 +55,14 @@ class IndexController extends Controller
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => [
                 "X-RapidAPI-Host: coronavirus-smartable.p.rapidapi.com",
-                "X-RapidAPI-Key: be7452c0a9msh8c4471d25fe51f0p1ff39djsnc154408a5580"
+                "X-RapidAPI-Key: 55dea38588msh3dfc3c0933cf70bp1c6d47jsn5c42aa4709a4"
             ],
         ]);
-
         $response = curl_exec($curl);
         $stats =json_decode($response,true);
         $err = curl_error($curl);
         curl_close($curl);
         array_push($stats,$country);
-        // $data=DB::table('global_data')->where('Country_code',$country)->orderBy('id', 'DESC')->get();
         // dd($stats['stats']['history']);
         return view('country-page',compact('stats'));
     }
@@ -73,6 +70,27 @@ class IndexController extends Controller
         return view('saved-page');
     }
     public function other_page_index(){
-        return view('other-feature');
+        $curl = curl_init();
+        $curl = curl_init();
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://coronavirus-smartable.p.rapidapi.com/news/v1/global/",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "X-RapidAPI-Host: coronavirus-smartable.p.rapidapi.com",
+                "X-RapidAPI-Key: 55dea38588msh3dfc3c0933cf70bp1c6d47jsn5c42aa4709a4"
+            ],
+        ]);
+
+        $response = curl_exec($curl);
+        $news =json_decode($response,true);
+        $err = curl_error($curl);
+        curl_close($curl);
+        return view('other-feature',compact('news'));
     }
 }

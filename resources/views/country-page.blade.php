@@ -29,8 +29,8 @@
             $(document).ready(function() {
                 var table = $('#example').DataTable( {
                     lengthChange: false,
-                    buttons: [ 'copy', 'pdf', ]
-                    // order: [ 3, "desc" ]
+                    buttons: [ 'copy', 'pdf', ],
+                    order: [ 0, "desc" ]
                 } );
             
                 table.buttons().container()
@@ -77,15 +77,15 @@
                         <thead>
                             <tr>
                                 <th>Date</th>
-                                <th>Confirm</th>
-                                <th>Death</th>
-                                <th>Recover</th>
+                                <th>Confirmed</th>
+                                <th>Deaths</th>
+                                <th>Recovered</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($stats['stats']['history'] as $key => $value)
                             <tr>
-                                <td>{{$value['date']}}</td>
+                                <td>{{substr($value['date'],0,10)}}</td>
                                 <td>{{$value['confirmed']}}</td>
                                 <td>{{$value['deaths']}}</td>
                                 <td>{{$value['recovered']}}</td>
@@ -95,9 +95,9 @@
                         <tfoot>
                             <tr>
                                 <th>Date</th>
-                                <th>New cases</th>
-                                <th>Cumulative cases</th>
-                                <th>New deaths</th>
+                                <th>Confirmed</th>
+                                <th>Deaths</th>
+                                <th>Recovered</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -105,7 +105,7 @@
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="text-center text-sm text-gray-500 sm:text-left">
                         <div class="flex items-center">
-                            Data sources:  <a href="https://covid19.who.int/data" target="_blank"> &nbsp;WHO Coronavirus (COVID-19) Dashboard</a>
+                            API: <a href="https://rapidapi.com/SmartableAI/api/coronavirus-smartable/" target="_blank"> &nbsp;Coronavirus Smartable</a>
                         </div>
                     </div>
                 </div>
