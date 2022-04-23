@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Covid Now - {{ $data[0]->Country }}</title>
+        <title>Covid Now - {{ $stats[0] }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -71,32 +71,24 @@
                         <a href="{{route('/')}}">Covid Now</a>
                     </h1>
                 </div>
-                <span><a href="{{route('/')}}">Home</a> / <a href="{{route('saved.page')}}">Saved Page</a> / County Page - {{ $data[0]->Country }}</span>
+                <span><a href="{{route('/')}}">Home</a> / <a href="{{route('saved.page')}}">Saved Page</a> / County Page - {{ $stats[0] }}</span>
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Date</th>
-                                <th>New cases</th>
-                                <th>Cumulative cases</th>
-                                <th>New deaths</th>
-                                <th>Cumulative deaths</th>
+                                <th>Confirm</th>
+                                <th>Death</th>
+                                <th>Recover</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($data as $key => $value)
+                            @foreach($stats['stats']['history'] as $key => $value)
                             <tr>
-                                <td>
-                                    @php
-                                        $time = strtotime($value->Date_reported);
-                                        $newformat = date('Y-m-d',$time);
-                                    @endphp
-                                    {{$newformat}}
-                                </td>
-                                <td>{{$value->New_cases}}</td>
-                                <td>{{$value->Cumulative_cases}}</td>
-                                <td>{{$value->New_deaths}}</td>
-                                <td>{{$value->Cumulative_deaths}}</td>
+                                <td>{{$value['date']}}</td>
+                                <td>{{$value['confirmed']}}</td>
+                                <td>{{$value['deaths']}}</td>
+                                <td>{{$value['recovered']}}</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -106,7 +98,6 @@
                                 <th>New cases</th>
                                 <th>Cumulative cases</th>
                                 <th>New deaths</th>
-                                <th>Cumulative deaths</th>
                             </tr>
                         </tfoot>
                     </table>
