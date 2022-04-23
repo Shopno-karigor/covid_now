@@ -67,7 +67,7 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <h1>
-                        Covid Now
+                        <a href="{{route('/')}}">Covid Now</a>
                     </h1>
                 </div>
                 <span><a href="{{route('/')}}">Home</a> / County Page - {{ $data }}</span>
@@ -75,32 +75,50 @@
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Date - 18/04/2022</th>
-                                <th>Date - 19/04/2022</th>
-                                <th>Date - 20/04/2022</th>
-                                <th>Date - 21/04/2022</th>
-                                <th>Date - 22/04/2022</th>
-                                <th>Date - 23/04/2022</th>
+                                <th>Date</th>
+                                <th>Confirmed</th>
+                                <th>Deaths</th>
+                                <th>Recovered</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Confirmed - 505,817,953 / Deaths - 6,213,876 / Recovered - 25,817,953</td>
-                                <td>Confirmed - 505,817,953 / Deaths - 6,213,876 / Recovered - 25,817,953</td>
-                                <td>Confirmed - 505,817,953 / Deaths - 6,213,876 / Recovered - 25,817,953</td>
-                                <td>Confirmed - 505,817,953 / Deaths - 6,213,876 / Recovered - 25,817,953</td>
-                                <td>Confirmed - 505,817,953 / Deaths - 6,213,876 / Recovered - 25,817,953</td>
-                                <td>Confirmed - 505,817,953 / Deaths - 6,213,876 / Recovered - 25,817,953</td>
+                                <td>18/04/2022</td> 
+                                <td>Confirmed - 505,817,953</td>
+                                <td>Deaths - 6,213,876</td>
+                                <td>Recovered - 25,817,953</td>
+                            </tr>
+                            <tr>
+                                <td>19/04/2022</td> 
+                                <td>Confirmed - 505,817,953</td>
+                                <td>Deaths - 6,213,876</td>
+                                <td>Recovered - 25,817,953</td>
+                            </tr>
+                            <tr>
+                                <td>20/04/2022</td> 
+                                <td>Confirmed - 505,817,953</td>
+                                <td>Deaths - 6,213,876</td>
+                                <td>Recovered - 25,817,953</td>
+                            </tr>
+                            <tr>
+                                <td>21/04/2022</td> 
+                                <td>Confirmed - 505,817,953</td>
+                                <td>Deaths - 6,213,876</td>
+                                <td>Recovered - 25,817,953</td>
+                            </tr>
+                            <tr>
+                                <td>22/04/2022</td> 
+                                <td>Confirmed - 505,817,953</td>
+                                <td>Deaths - 6,213,876</td>
+                                <td>Recovered - 25,817,953</td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>Date - 18/04/2022</th>
-                                <th>Date - 19/04/2022</th>
-                                <th>Date - 20/04/2022</th>
-                                <th>Date - 21/04/2022</th>
-                                <th>Date - 22/04/2022</th>
-                                <th>Date - 23/04/2022</th>
+                                <th>Date</th>
+                                <th>Confirmed</th>
+                                <th>Deaths</th>
+                                <th>Recovered</th>
                             </tr>
                         </tfoot>
                     </table>
