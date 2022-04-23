@@ -15,6 +15,6 @@ use App\Http\Controllers\IndexController;
 */
 
 Route::get('/',[IndexController::class, 'index'])->name('/');
-Route::get('Country_Page',[IndexController::class, 'country_index'])->name('country.page');
+Route::get('Country_Page/{country}',[IndexController::class, 'country_index'])->name('country');
 Route::get('Saved_Page',[IndexController::class, 'saved_page_index'])->name('saved.page');
 Route::get('Other_Features',[IndexController::class, 'other_page_index'])->name('other.feature');

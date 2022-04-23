@@ -10,8 +10,9 @@ class IndexController extends Controller
     public function index(){
         return view('welcome');
     }
-    public function country_index(){
-        return view('country-page');
+    public function country_index($country){
+        $data=$country;
+        return view('country-page',compact('data'));
     }
     public function saved_page_index(){
         return view('saved-page');
