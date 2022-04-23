@@ -58,17 +58,17 @@
                           <tr>
                             <th scope="row">#1</th>
                             <td>Bangladesh</td>
-                            <td><a href="{{route('country','Bangladesh')}}">Bangladesh</a></td>
+                            <td><a href="{{route('country','BD')}}">Bangladesh</a></td>
                           </tr>
                           <tr>
                             <th scope="row">#2</th>
                             <td>USA</td>
-                            <td><a href="{{route('country','USA')}}">USA</a></td>
+                            <td><a href="{{route('country','US')}}">USA</a></td>
                           </tr>
                           <tr>
                             <th scope="row">#3</th>
                             <td>UK</td>
-                            <td><a href="{{route('country','UK')}}">UK</a></td>
+                            <td><a href="{{route('country','GB')}}">UK</a></td>
                           </tr>
                         </tbody>
                       </table>

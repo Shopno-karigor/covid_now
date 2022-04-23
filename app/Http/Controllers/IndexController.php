@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class IndexController extends Controller
 {
@@ -11,7 +12,9 @@ class IndexController extends Controller
         return view('welcome');
     }
     public function country_index($country){
-        $data=$country;
+        // $data=DB::table('global_data')->where('Country_code',$country)->orderBy('Date_reported', 'DESC')->get();
+        $data=DB::table('global_data')->where('Country_code',$country)->orderBy('id', 'DESC')->get();
+        // $data=$country;
         return view('country-page',compact('data'));
     }
     public function saved_page_index(){

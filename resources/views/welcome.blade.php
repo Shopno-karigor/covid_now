@@ -71,7 +71,7 @@
                                     <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="{{route('country','Bangladesh')}}" class="underline text-gray-900 dark:text-white">Bangladesh</a>
+                                    <a href="https://covid19.who.int/region/searo/country/bd" target="_blank" class="underline text-gray-900 dark:text-white">Bangladesh</a>
                                 </div>
                             </div>
 
@@ -87,7 +87,7 @@
                                     <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="{{route('country','USA')}}" class="underline text-gray-900 dark:text-white">USA</a>
+                                    <a href="https://covid19.who.int/region/amro/country/us" target="_blank" class="underline text-gray-900 dark:text-white">USA</a>
                                 </div>
                             </div>
 
@@ -103,7 +103,7 @@
                                     <path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">
-                                    <a href="{{route('country','UK')}}" class="underline text-gray-900 dark:text-white">UK</a>
+                                    <a href="https://covid19.who.int/region/euro/country/gb" target="_blank" class="underline text-gray-900 dark:text-white">UK</a>
                                 </div>
                             </div>
 
@@ -119,7 +119,7 @@
                                     <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                                 </svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    <a href="{{route('saved.page')}}" class="underline text-gray-900 dark:text-white">Saved Pages</a>
+                                    <a href="{{route('saved.page')}}" class="underline text-gray-900 dark:text-white">Saved Page</a>
                                 </div>
                             </div>
 

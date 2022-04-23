@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Covid Now - {{ $data }}</title>
+        <title>Covid Now - {{ $data[0]->Country }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -30,6 +30,7 @@
                 var table = $('#example').DataTable( {
                     lengthChange: false,
                     buttons: [ 'copy', 'pdf', ]
+                    // order: [ 3, "desc" ]
                 } );
             
                 table.buttons().container()
@@ -70,58 +71,52 @@
                         <a href="{{route('/')}}">Covid Now</a>
                     </h1>
                 </div>
-                <span><a href="{{route('/')}}">Home</a> / County Page - {{ $data }}</span>
+                <span><a href="{{route('/')}}">Home</a> / <a href="{{route('saved.page')}}">Saved Page</a> / County Page - {{ $data[0]->Country }}</span>
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <table id="example" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Date</th>
-                                <th>Confirmed</th>
-                                <th>Deaths</th>
-                                <th>Recovered</th>
+                                <th>New cases</th>
+                                <th>Cumulative cases</th>
+                                <th>New deaths</th>
+                                <th>Cumulative deaths</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($data as $key => $value)
                             <tr>
-                                <td>18/04/2022</td> 
-                                <td>Confirmed - 505,817,953</td>
-                                <td>Deaths - 6,213,876</td>
-                                <td>Recovered - 25,817,953</td>
+                                <td>
+                                    @php
+                                        $time = strtotime($value->Date_reported);
+                                        $newformat = date('Y-m-d',$time);
+                                    @endphp
+                                    {{$newformat}}
+                                </td>
+                                <td>{{$value->New_cases}}</td>
+                                <td>{{$value->Cumulative_cases}}</td>
+                                <td>{{$value->New_deaths}}</td>
+                                <td>{{$value->Cumulative_deaths}}</td>
                             </tr>
-                            <tr>
-                                <td>19/04/2022</td> 
-                                <td>Confirmed - 505,817,953</td>
-                                <td>Deaths - 6,213,876</td>
-                                <td>Recovered - 25,817,953</td>
-                            </tr>
-                            <tr>
-                                <td>20/04/2022</td> 
-                                <td>Confirmed - 505,817,953</td>
-                                <td>Deaths - 6,213,876</td>
-                                <td>Recovered - 25,817,953</td>
-                            </tr>
-                            <tr>
-                                <td>21/04/2022</td> 
-                                <td>Confirmed - 505,817,953</td>
-                                <td>Deaths - 6,213,876</td>
-                                <td>Recovered - 25,817,953</td>
-                            </tr>
-                            <tr>
-                                <td>22/04/2022</td> 
-                                <td>Confirmed - 505,817,953</td>
-                                <td>Deaths - 6,213,876</td>
-                                <td>Recovered - 25,817,953</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th>Date</th>
-                                <th>Confirmed</th>
-                                <th>Deaths</th>
-                                <th>Recovered</th>
+                                <th>New cases</th>
+                                <th>Cumulative cases</th>
+                                <th>New deaths</th>
+                                <th>Cumulative deaths</th>
                             </tr>
                         </tfoot>
                     </table>
+                </div>
+                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
+                    <div class="text-center text-sm text-gray-500 sm:text-left">
+                        <div class="flex items-center">
+                            Data sources:  <a href="https://covid19.who.int/data" target="_blank"> &nbsp;WHO Coronavirus (COVID-19) Dashboard</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
