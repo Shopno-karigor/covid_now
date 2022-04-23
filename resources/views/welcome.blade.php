@@ -55,12 +55,20 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td>6,213,876</td>
-                            <td>25,817,953</td>
-                            <td>505,817,953</td>
+                            <td>{{$stats['stats']['totalDeaths']}}</td>
+                            <td>{{$stats['stats']['totalRecoveredCases']}}</td>
+                            <td>{{$stats['stats']['totalConfirmedCases']}}</td>
                           </tr>
                         </tbody>
                       </table>
+                </div>
+
+                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
+                    <div class="text-center text-sm text-gray-500 sm:text-left">
+                        <div class="flex items-center">
+                            API: <a href="https://rapidapi.com/SmartableAI/api/coronavirus-smartable/" target="_blank"> &nbsp;Coronavirus Smartable</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
